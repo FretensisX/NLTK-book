@@ -1,0 +1,96 @@
+#Exercises only listed if they involve writing original code/ performing original analysis
+#those that solely involve experimentation in interpreter omitted
+
+#Exercise 1
+len(text2)  #number of tokens in text2
+len(set(text2)) #number of types in text2
+
+#Exercise 6
+text2.dispersion_plot(["Elinor", "Marianne", "Edward", "Willoughby"])
+#females are clearly the more primary protagonists, with the males as secondary
+#My guess is that the couples are Willoughby and Marianne and Edward and Elinor
+#since Willoughby's presence in the novel appears to correspond with Marianne's most frequent appearances 
+#and Edward seems to show up when Marianne is least present, and Elinor is present more or less throughout
+
+#Exercise 7
+text5.collocations()
+
+#Exercise 8
+#Purpose of len(set(text4)) is to find the number of types in text4
+#Step 1: find the set of text 4, Step 2: take the len of the set
+
+#Exercise 9b
+#Can fix by adding a space before the end " in the string
+
+#Exercise 11
+#The result is the same
+
+#Exercise 12
+# B. NLP is typically concerned with tokens, not chars, and typically uses lists rather than strings
+
+#Exercise 13
+#sent1[2][2] takes the third word in sent 1, and then the third char in that word
+#It must go in that order because it progresses in order of positional specificity (i.e. word, then char)
+
+#Exercise 14
+#5 & 8
+
+#Exercise 15
+sorted(set([w for w in text5 if w.startswith('b')])) #returns an alphabetical list of all types in text5 starting with 'b'
+
+#Exercise 17
+text9[621:644]
+
+#Exercise 18
+len(sorted(set(sent1+sent2+sent3+sent4+sent5+sent6+sent7+sent8)))
+
+#Exercise 19
+#sorted([w.lower() for w in set(text1)]) will give a larger value because it retains capitals made lower as separate tokens
+#This will be be the case with other texts in all cases for which the text distinguishes cases
+#In cases where text is all upper or all lower to begin with, both codes should yield the same result
+
+#Exercise 20
+#The difference is that w.isupper() only checks for upper case whereas not w.islower() will check for both upper and title cases
+
+#Exercise 21
+text2[-2:]
+
+#Exercise 22
+chatdist4 = FreqDist([w for w in text5 if len(w) == 4])
+chatdist4
+
+#Exercise 23
+script = [w for w in text6]
+for w in script:
+  if w.isupper():
+    print(w)
+
+#Exercise 24
+[w for w in text6 if w.endswith('ize')] #a list of all words in text6 that end in 'ize'
+[w for w in text6 if 'z' in w]  #a list of all words in text6 that contain 'z'
+[w for w in text6 if 'pt' in w] #a list of all words in text6 that contain the sequence 'pt'
+[w for w in text6 if w.istitle()] #a list of all titlecase words in text6
+
+#Exercise 25
+[w for w in sent if w.startswith('sh')]  #a list of all words in sent that start with 'sh'
+[w for w in sent if len(w) > 4] #a list of all words in sent whose length is greater than 4 chars
+
+#Exercise 26
+#It takes the len of each word in text1 and sums them. To find the avg len, divide sum by len(text1)
+
+#Exercise 27
+def vocab_size(text):
+  print(len(set(text)))
+
+#Exercise 28
+def percent(word, text):
+	fdist = FreqDist([w for w in text])
+	per = fdist.freq(word) * 100
+	print("The frequency of", word, "in", text, "is", per, "%")
+  
+#Exercise 29
+#Returns True or False. Useful in determining which text has a larger vocab
+
+
+
+
